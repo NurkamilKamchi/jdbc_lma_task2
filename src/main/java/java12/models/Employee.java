@@ -16,7 +16,7 @@ public class Employee {
     private int age;
 
     private String email;
-    private int job_id ;
+    private int job_id;
 //    (reference)
 
     public Employee(String firstName, String lastName, int age, String email, int job_id) {

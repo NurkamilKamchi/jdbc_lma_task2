@@ -63,15 +63,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
             System.out.println(e.getMessage());
         }
     }
-//    public void saveUser(String name, String lastName, byte age) {
-//        String query = """
-//                insert into users(name,lastName,age)
-//                values(?,?,?);
-//                """;
-//        try (PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-//            preparedStatement.setString(1,name);
-//            preparedStatement.setString(2, lastName);
-//            preparedStatement.setInt(3, age);
+
 
     @Override
     public void dropTable() {
@@ -157,26 +149,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         }
         return employeeList;
     }
-//       public List<User> getAllUsers() {
-//        List<User> users = new ArrayList<>();
-//        String query = """
-//                select * from users;
-//                """;
-//        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//            while (resultSet.next()){
-//                User user = new User();
-//                user.setId(resultSet.getLong("id"));
-//                user.setName(resultSet.getString("name"));
-//                user.setLastName(resultSet.getString("lastName"));
-//                user.setAge(resultSet.getByte("age"));
-//                users.add(user);
-//            }
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
-//        return users;
-//    }
+
 
     @Override
     public Employee findByEmail(String email) {
@@ -225,7 +198,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
                     job.setProfession(resultSet.getString("profession"));
                     job.setDescription(resultSet.getString("description"));
                     job.setExperience(resultSet.getInt("experience"));
-                    employeeJobMap.put(employee,job);
+                    employeeJobMap.put(employee, job);
                 }
             }
         } catch (SQLException e) {
@@ -238,7 +211,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public List<Employee> getEmployeeByPosition(String position) {
         Employee employee = new Employee();
-        List<Employee > employees = new ArrayList<>();
+        List<Employee> employees = new ArrayList<>();
         String query = """
                 select * from employees e join jobs j on e.job_id = j.job_id where job_position = ?;
                 """;

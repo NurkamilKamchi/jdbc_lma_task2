@@ -8,8 +8,8 @@ import java12.models.Job;
 import java.util.List;
 import java.util.Map;
 
-public class EmployeeServiceImpl implements EmployeeService{
-   private final EmployeeDao employeeDao = new EmployeeDaoImpl();
+public class EmployeeServiceImpl implements EmployeeService {
+    private final EmployeeDao employeeDao = new EmployeeDaoImpl();
 
     @Override
     public void createEmployee() {
@@ -18,22 +18,22 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public void addEmployee(Employee employee) {
-     employeeDao.addEmployee(employee);
+        employeeDao.addEmployee(employee);
     }
 
     @Override
     public void dropTable() {
-    employeeDao.dropTable();
+        employeeDao.dropTable();
     }
 
     @Override
     public void cleanTable() {
-  employeeDao.cleanTable();
+        employeeDao.cleanTable();
     }
 
     @Override
     public void updateEmployee(Long id, Employee employee) {
-      employeeDao.updateEmployee(id,employee);
+        employeeDao.updateEmployee(id, employee);
     }
 
     @Override

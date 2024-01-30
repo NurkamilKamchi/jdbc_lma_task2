@@ -32,14 +32,7 @@ public class JobDaoImpl implements JobDao {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-//    private Long id;
-//    private String position;
-//    //    ("Mentor","Management","Instructor") ушундай маанилер берилсин
-//    private String profession;
-//    //    ("Java","JavaScript")
-//    private String description;
-//    //    ("Backend developer","Fronted developer")
-//    private int experience;
+
     }
 
     @Override
@@ -169,7 +162,7 @@ public class JobDaoImpl implements JobDao {
             int i = preparedStatement.executeUpdate();
             if (i >= 0) {
                 System.out.println("Success!!!");
-            }else {
+            } else {
                 System.out.println("Not success!!!");
             }
         } catch (SQLException e) {
@@ -183,14 +176,14 @@ public class JobDaoImpl implements JobDao {
         String qu = """
                 alter table jobs add column description varchar; 
                 """;
-        try (PreparedStatement preparedStatement = connection.prepareStatement(qu);){
+        try (PreparedStatement preparedStatement = connection.prepareStatement(qu);) {
             int i = preparedStatement.executeUpdate();
-            if (i>=0){
+            if (i >= 0) {
                 System.out.println("Success");
-            }else {
+            } else {
                 System.out.println("not success");
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
